@@ -1,0 +1,27 @@
+{
+  "deployment_test": {
+    "pr_auc": 0.38837742512812096,
+    "roc_auc": 0.768341348307361,
+    "brier_score": 0.11880408908958508,
+    "precision_at_threshold": 0.3944903581267218,
+    "recall_at_threshold": 0.4802146210596915
+  },
+  "research_test": {
+    "pr_auc": 0.3918828694080436,
+    "roc_auc": 0.7662469244373776,
+    "brier_score": 0.11918101500118902,
+    "precision_at_threshold": 0.6273584905660378,
+    "recall_at_threshold": 0.0892018779342723
+  },
+  "pr_auc_retention": 0.9910548672739439,
+  "threshold_search": {
+    "threshold": 0.2325,
+    "val_expected_profit": 9018575.915399998,
+    "val_approval_rate": 0.7846666666666666,
+    "val_default_rate_of_approved": 0.1070518266779949
+  },
+  "test_realized_profit_at_threshold": 8993127.843599997,
+  "test_realized_profit_approve_all": 5449500.391799999,
+  "n_deployment_features": 43,
+  "n_research_features": 109
+}

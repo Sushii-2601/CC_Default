@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lending-club-credit-risk"
+version = "1.0.0"
+description = "Deployment-scoped credit risk scoring model (XGBoost, calibrated, cost-sensitive threshold) for LendingClub-style consumer loans."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sushant Pandey" }]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# ISC004: multi-line lists of markdown/report string lines are intentionally
+# adjacent literals, not accidental concatenation -- keep them readable.
+ignore = ["ISC004"]
