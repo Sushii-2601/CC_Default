@@ -31,3 +31,20 @@ PROFIT_MARGIN = 0.18        # net interest margin earned on a fully-paid loan
 # --- Train / val / test split --------------------------------------------
 TEST_SIZE = 0.15
 VAL_SIZE = 0.15  # taken out of the remaining train split
+
+# --- Real LendingClub data (2007-2018Q4 accepted loans, 151 raw columns) --
+# Not vendored into the repo (1.6 GB) -- download separately, e.g.:
+#   curl -L -o data_real/LendingClub_2007_to_2018Q4.csv \
+#     https://bigblue.depaul.edu/jlee141/econdata/LendingClub_LoanData/LendingClub_2007_to_2018Q4.csv
+REAL_DATA_DIR = ROOT_DIR / "data_real"
+REAL_RAW_CSV_PATH = REAL_DATA_DIR / "LendingClub_2007_to_2018Q4.csv"
+REAL_DEPLOYMENT_ARTIFACTS_PATH = ARTIFACTS_DIR / "deployment_artifacts_real.joblib"
+REAL_METRICS_REPORT_PATH = REPORTS_DIR / "metrics_real.json"
+REAL_MODEL_CARD_PATH = REPORTS_DIR / "model_report_real.md"
+
+# Only these two loan_status values represent a resolved (fully observed)
+# outcome; every other status (Current, Late, In Grace Period, Default,
+# Issued) is a loan whose eventual outcome we don't yet know, and including
+# it would put an undetermined target in the training data.
+RESOLVED_LOAN_STATUSES = ["Fully Paid", "Charged Off"]
+REAL_TARGET_COLUMN = "loan_status"  # 1 = Charged Off, 0 = Fully Paid, after mapping

@@ -18,6 +18,10 @@ env/
 data/*.csv
 !data/.gitkeep
 
+# Real LendingClub CSV (1.6 GB) -- never commit; download per README
+data_real/
+lc_sample.csv
+
 # Jupyter
 .ipynb_checkpoints/
 

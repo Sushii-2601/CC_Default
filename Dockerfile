@@ -16,8 +16,11 @@ COPY . .
 RUN pip install --no-cache-dir --no-deps -e .
 
 # Train the model at build time if no pre-trained artifact was committed.
+# Prefers a committed real-data artifact; the 1.6 GB real CSV itself is
+# never part of the build context, so the fallback trains on synthetic data.
 RUN python -c "from pathlib import Path; import sys; \
-    sys.exit(0) if Path('artifacts/deployment_artifacts.joblib').exists() else sys.exit(1)" \
+    sys.exit(0) if (Path('artifacts/deployment_artifacts_real.joblib').exists() \
+    or Path('artifacts/deployment_artifacts.joblib').exists()) else sys.exit(1)" \
     || python scripts/train.py
 
 EXPOSE 8501

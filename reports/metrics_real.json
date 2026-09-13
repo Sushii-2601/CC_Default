@@ -1,0 +1,142 @@
+{
+  "feature_columns": [
+    "loan_amnt",
+    "term",
+    "annual_inc",
+    "dti",
+    "emp_length_years",
+    "delinq_2yrs",
+    "fico_avg",
+    "fico_range_low",
+    "fico_range_high",
+    "inq_last_6mths",
+    "open_acc",
+    "pub_rec",
+    "revol_bal",
+    "revol_util",
+    "total_acc",
+    "mort_acc",
+    "pub_rec_bankruptcies",
+    "credit_history_years",
+    "tot_cur_bal",
+    "total_rev_hi_lim",
+    "acc_open_past_24mths",
+    "avg_cur_bal",
+    "tot_coll_amt",
+    "tot_hi_cred_lim",
+    "num_actv_bc_tl",
+    "dti_was_missing",
+    "inq_last_6mths_was_missing",
+    "revol_util_was_missing",
+    "mort_acc_was_missing",
+    "pub_rec_bankruptcies_was_missing",
+    "tot_cur_bal_was_missing",
+    "total_rev_hi_lim_was_missing",
+    "acc_open_past_24mths_was_missing",
+    "avg_cur_bal_was_missing",
+    "tot_coll_amt_was_missing",
+    "tot_hi_cred_lim_was_missing",
+    "num_actv_bc_tl_was_missing",
+    "home_ownership_MORTGAGE",
+    "home_ownership_OWN",
+    "home_ownership_OTHER",
+    "home_ownership_ANY",
+    "home_ownership_NONE",
+    "verification_status_Source Verified",
+    "verification_status_Not Verified",
+    "purpose_credit_card",
+    "purpose_home_improvement",
+    "purpose_other",
+    "purpose_major_purchase",
+    "purpose_small_business",
+    "application_type_Joint App",
+    "initial_list_status_f",
+    "region_Southeast",
+    "region_Midwest",
+    "region_Southwest",
+    "region_Mountain",
+    "region_Pacific",
+    "region_Other"
+  ],
+  "threshold": 0.23,
+  "categorical_options": {
+    "home_ownership": [
+      "RENT",
+      "MORTGAGE",
+      "OWN",
+      "OTHER",
+      "ANY",
+      "NONE"
+    ],
+    "verification_status": [
+      "Verified",
+      "Source Verified",
+      "Not Verified"
+    ],
+    "purpose": [
+      "debt_consolidation",
+      "credit_card",
+      "home_improvement",
+      "other",
+      "major_purchase",
+      "small_business"
+    ],
+    "initial_list_status": [
+      "w",
+      "f"
+    ],
+    "application_type": [
+      "Individual",
+      "Joint App"
+    ],
+    "region": [
+      "Northeast",
+      "Southeast",
+      "Midwest",
+      "Southwest",
+      "Mountain",
+      "Pacific",
+      "Other"
+    ]
+  },
+  "cost_assumptions": {
+    "loss_given_default": 0.6,
+    "profit_margin": 0.18
+  },
+  "metrics": {
+    "deployment_test": {
+      "pr_auc": 0.3788499523583126,
+      "roc_auc": 0.7139772808585103,
+      "brier_score": 0.14420826478714074,
+      "precision_at_threshold": 0.34670315310467814,
+      "recall_at_threshold": 0.5598252407903882
+    },
+    "research_test": {
+      "pr_auc": 0.39633974403556194,
+      "roc_auc": 0.72859644663288,
+      "brier_score": 0.14197604848408657,
+      "precision_at_threshold": 0.5659247689704543,
+      "recall_at_threshold": 0.10793367093635191
+    },
+    "pr_auc_retention": 0.9558717187956803,
+    "threshold_search": {
+      "threshold": 0.23,
+      "val_expected_profit": 143881219.5,
+      "val_approval_rate": 0.6774778614151845,
+      "val_default_rate_of_approved": 0.12902942660902766
+    },
+    "f1_optimal_threshold": 0.2175,
+    "test_realized_profit_at_profit_threshold": 140688346.5,
+    "test_realized_profit_at_f1_threshold": 140428579.5,
+    "test_realized_profit_approve_all": 32250150.0
+  },
+  "n_deployment_features": 57,
+  "n_research_features": 154,
+  "n_resolved_loans": 1345310,
+  "real_charge_off_rate": 0.19962610848057324,
+  "n_leakage_columns_dropped": 39,
+  "trained_at": "2026-09-08 10:36:32",
+  "random_seed": 42,
+  "data_source": "real",
+  "package_version": "1.0.0"
+}
